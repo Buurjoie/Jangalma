@@ -11,4 +11,3 @@ workflows:
             xcode: lastest
             node: lastest
             npm: lastest
-            ionic: lastest

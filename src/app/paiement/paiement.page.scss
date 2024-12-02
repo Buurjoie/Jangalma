@@ -1,0 +1,24 @@
+ion-button.connection{
+    --background: #F6BA4B;
+    --background-activated: transparent;
+  }
+
+  .error {
+    margin-top: 5px !important;
+    font-size: 0.75rem;
+  }
+
+ion-input{
+    --highlight-color-focused: #F6BA4B !important;
+    --padding-start: 9px;
+}
+
+.orange{
+    color: orange;
+    text-align: center;
+}
+
+.skyblue{
+    color: skyblue;
+    text-align: center;
+}

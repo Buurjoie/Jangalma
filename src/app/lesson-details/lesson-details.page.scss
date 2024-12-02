@@ -1,0 +1,136 @@
+body{
+    background-color: aliceblue;
+}
+.custom-back-button {
+    --background: #111A3A; // Changer la couleur et l'opacité selon vos préférences
+    border-radius: 50%; // Pour un bouton de retour rond
+    padding: 4px; // Pour ajuster la taille du fond
+  }
+
+  ion-title {
+    font-weight: bold;
+    color: white;
+  }
+  
+  .custom-back-button {
+    color: #111A3A;
+    color: white;
+  }
+  
+  
+  ion-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #F6BA4B;
+    border: 1px solid #F6BA4B;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  ion-skeleton-text.elmLodin{
+    width: 100%;
+    height: 30px;
+    border-radius: 16px;
+    text-align: center;
+    margin:auto;
+  }
+
+  ion-card-content {
+    font-size: 16px;
+    // color: black;
+    word-wrap: break-word;
+  }
+  :host strong,
+:host b {
+  word-wrap: break-word;
+  font-weight: bold;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 1.75rem;
+  letter-spacing: -.762769px;
+  color: #F6BA4B;
+  overflow-x: hidden;
+}
+
+.button-quiz,
+.button-exercices,
+.button-videos {
+  background-color: #111A3A;
+  color: white;
+  border-radius: 8px;
+  padding: 0 10px;
+}
+.button-container {
+
+  padding: 16px;
+  word-wrap: break-word;
+}
+
+.button-container:last-child {
+  margin-right: 0;
+}
+.button-quiz{
+  background-color: #c3dadd;
+}
+ion-content {
+  overflow-x: hidden;
+}
+ion-card-content {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+  
+  ion-card-content h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+ion-card-content p {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+ion-card-content label {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+ion-card-content input[type="radio"] {
+  margin-right: 8px;
+}
+
+ion-card-content button {
+  background-color: #111A3A;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.elmher{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #F6BA4B;
+  border-radius: 20px;
+  padding: 3px;
+}
+
+.button-container{
+  width: 100%;
+}
+  
+  
+  
+  

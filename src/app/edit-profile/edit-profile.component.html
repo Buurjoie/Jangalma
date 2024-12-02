@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar   style="--background: #F6BA4B;">
+    <ion-title style="--color: #fff;">Modifier le profil</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()" style="--color: #fff;">Fermer</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="p-4"  [formGroup]="userProfileForm" (ngSubmit)="updateProfile()">
+    <ion-list class="bg-transparent">
+      <ion-item>
+        <ion-label position="floating">Prénom</ion-label>
+        <ion-input formControlName="name" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nom</ion-label>
+        <ion-input formControlName="surname" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" class="mb-3">Téléphone</ion-label>
+        <ion-grid class="pt-3">
+          <ion-row>
+            <ion-col size="4">
+              <ion-button  id="monpays" expand="block" style="--background: transparent; --box-shadow: none; width: 60px; margin-top: 8px; --background-activated: transparent;" class="elmBTN mt-3">
+                <img [src]="imgElm" alt="" class="w-8">
+              </ion-button>
+              <ion-input
+              formControlName="phoneCode" 
+              type="text"
+              placeholder="+221" 
+              [value]="codeElm"
+              required
+              hidden
+              style="display: none;"
+               ></ion-input>
+            </ion-col>
+            <ion-col size="8">
+              <ion-input formControlName="phone" type="tel" placeholder="Numéro de téléphone"></ion-input>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Classe</ion-label>
+        <ion-select formControlName="class_">
+          <ion-select-option value="Sixième">6eme</ion-select-option>
+          <ion-select-option value="Cinquième">5eme</ion-select-option>
+          <ion-select-option value="Quatrième">4eme</ion-select-option>
+          <ion-select-option value="Troisième">3eme</ion-select-option>
+          <ion-select-option value="Seconde">2nd</ion-select-option>
+          <ion-select-option value="Première">1er</ion-select-option>
+          <ion-select-option value="Tle">Terminale</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-button shape="round" size="default" class="ion-margin-top" style="--background: #F6BA4B; color: #ffffff; " type="submit" [disabled]="!userProfileForm.valid">
+      Mettre à jour
+    </ion-button>
+  </form>
+
+  <ion-modal #modale trigger="monpays">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-searchbar placeholder="Search" (ionInput)="searchbarInput($event)"></ion-searchbar>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        
+        <ion-list>
+          <ion-item *ngFor="let item of pays">
+            <ion-avatar slot="start">
+              <ion-img [src]="item.flags.png"></ion-img>
+            </ion-avatar>
+            <ion-checkbox slot="end" (click)="checkboxChange(item.name.common)"
+          ></ion-checkbox>
+            <ion-label>
+              <h2>{{item.name.common}}</h2>
+              <p>{{item.name.official}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>

@@ -1,0 +1,77 @@
+<!-- <ion-header>
+  <ion-toolbar style="--background: #1a717d; color: #ffffff;">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>BIENVENUE</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/classes">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header>
+  <ion-toolbar style="--background: #F6BA4B;">
+    <ion-buttons slot="end">
+      <ion-menu-button style="--color: #fff;"></ion-menu-button>
+    </ion-buttons>
+    <ion-button style="--background: transparent; --box-shadow: none; --background-activated: transparent;" slot="start" class="bg-transparent" (click)="goBack()">
+      <ion-icon name="chevron-back" class="text-white" style="color: #fff;" ></ion-icon>
+  </ion-button>
+    <ion-label slot="start">
+      <ion-title>BIENVENUE</ion-title>
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-toolbar *ngIf="showVocal && lesson">
+    <ion-buttons slot="start" style="justify-content: center; width: 100%;">
+      <div class="button-container">
+        <div class="elmher">
+          <ion-buttons>
+            <!-- deux bouton speak stop avec icon playe -->
+             <ion-button (click)="speak()" *ngIf="show" style="--color: #fff;">
+               <ion-icon name="play"></ion-icon>
+             </ion-button>
+             <ion-button (click)="stopSpeak()" *ngIf="!show" style="--color: #fff;">
+               <ion-icon name="stop"></ion-icon>
+             </ion-button>
+            </ion-buttons>
+            <ion-progress-bar style="--progress-background: #111A3A; --background:#fff;" [value]="progressVoc"></ion-progress-bar>
+        </div>
+      </div>
+    </ion-buttons>
+    <ion-progress-bar style="--progress-background: #F6BA4B; --background:transparent;" [value]="progress"></ion-progress-bar>
+  </ion-toolbar>
+
+
+<ion-content 
+  #content
+  [scrollEvents]="true"
+  (ionScroll)="handleScroll($any($event))">
+
+  <div class="content-container">
+  <ion-card *ngIf="lesson">
+    <ion-card-header>
+      <ion-card-title [innerHTML]="lesson.title.rendered"></ion-card-title>
+    </ion-card-header>
+    <ion-card-content [innerHTML]="lesson.content.rendered"></ion-card-content>
+    <iframe *ngIf="iframeSrc" [src]="iframeSrc" width="100%" height="800px"></iframe>
+  </ion-card>
+</div>
+
+<ion-list *ngIf="!lesson" lines="none" class="bg-transparent">
+  <ion-item class="bg-transparent">
+    <ion-label>
+    <h3 class="mb-4">
+      <ion-skeleton-text [animated]="true" class="elmLodin" style="width: 80%;"></ion-skeleton-text>
+    </h3>
+      <p  *ngFor="let elm of loadingTab">
+        <ion-skeleton-text [animated]="true" style="width: 100%;"></ion-skeleton-text>
+      </p>
+    </ion-label>
+  </ion-item>
+</ion-list>
+</ion-content>

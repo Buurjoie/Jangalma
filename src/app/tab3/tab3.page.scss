@@ -1,0 +1,68 @@
+:host {
+  ion-content {
+    --ion-background-color: #000000;
+  }
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.display {
+  padding: 0 10px;
+  min-height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: #000000;
+
+  .display-expression {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.5rem;
+    text-align: right;
+  }
+
+  .display-result {
+    color: #ffffff;
+    font-size: 2.5rem;
+    text-align: right;
+  }
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 2px;
+}
+
+ion-button {
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --background: transparent;
+  --border-radius: 0;
+  --box-shadow: none;
+  --ripple-color: rgba(255, 255, 255, 0.2);
+  --color: #ffffff;
+  --font-size: 1.5rem;
+  --height: 100%;
+  --width: 100%;
+}
+
+.gray-btn {
+  --background: rgba(60, 60, 60, 1);
+}
+
+.orange-btn {
+  --color: #000000;
+  --background: #ff9e0d;
+}
+
+.double-height {
+  grid-row: span 2;
+}

@@ -1,0 +1,264 @@
+<ion-content [fullscreen]="true">
+  <div class="circleBase type2 circle1"></div>
+  <div class="circleBase type1"></div>
+  <div class="circleBase type2 circle2"></div>
+
+  <ion-label class="welcomeMessage">
+      <img loading='lazy'
+            alt="Silhouette of mountains"
+            src="assets/images/logo2.png"
+            className="logoImg h-8 w-8 object-cover"
+          />
+  </ion-label>
+<form [formGroup]="inscForm">
+  <ion-list lines="none" class="elmListe ion-margin-horizontal ion-padding-horizontal ion-text-center">
+    <ion-list-header>
+        <ion-text [class]="signupSuccess?'text-green-500':'text-red-500'">{{message}}</ion-text>
+      </ion-list-header>
+   <!-- Partie 1 -->
+   <div *ngIf="partie1">
+    <ion-item class="elmIteme ion-margin-vertical">
+      <ion-icon 
+        name="person-outline" slot="end" color="medium">
+      </ion-icon>
+      <ion-input 
+        type="text"
+        formControlName="name" 
+        placeholder="Entrer votre nom"
+        [(ngModel)]="name"
+        >
+      </ion-input>
+    </ion-item>
+    <ion-text 
+      class="ion-text-left"
+      color="danger"
+      *ngIf="!inscForm.get('name')?.valid && inscForm.get('name')?.touched">
+      <p class="error">*SVP entrer votre nom </p>
+    </ion-text>
+
+    <ion-item class="elmIteme ion-margin-vertical">
+      <ion-icon 
+        name="person-outline" slot="end" color="medium">
+      </ion-icon>
+      <ion-input 
+        type="text"
+        formControlName="surname" 
+        [(ngModel)]="surname"
+        placeholder="Entrer votre Prénom">
+      </ion-input>
+    </ion-item>
+    <ion-text 
+      class="ion-text-left"
+      color="danger"
+      *ngIf="!inscForm.get('surname')?.valid && inscForm.get('surname')?.touched">
+      <p class="error">*SVP entrer votre prenom </p>
+    </ion-text>
+
+    <ion-item class="elmIteme ion-margin-vertical">
+      <ion-icon 
+        name="mail-outline" slot="end" color="medium">
+      </ion-icon>
+      <ion-input
+        type="email" 
+        formControlName="email" 
+        [(ngModel)]="email"
+        placeholder="Entrer votre adresse Email">
+      </ion-input>
+    </ion-item>
+    <ion-text 
+      class="ion-text-left"
+      color="danger"
+      *ngIf="!inscForm.get('email')?.valid && inscForm.get('email')?.touched">
+      <p class="error">*svp entrer votre adresse Email</p>
+    </ion-text>
+
+    <ion-item class="elmIteme ion-margin-vertical">
+      <ion-icon 
+       name="call-outline" slot="end" color="medium">
+     </ion-icon>
+     <ion-grid>
+       <ion-row>
+         <ion-col size="4">
+           <ion-button  id="pays" expand="block" style="--background: transparent; --box-shadow: none; width: 60px; margin-top: 8px; --background-activated: transparent;" class="elmBTN">
+             <img [src]="imgElm" alt="" class="w-8">
+           </ion-button>
+           <ion-input 
+           [(ngModel)]="phoneCode" 
+           name="phoneCode" 
+           placeholder="+221" 
+           formControlName="phoneCode" 
+           required
+           [value]="codeElm"
+           hidden
+           ></ion-input>
+         </ion-col>
+         <ion-col size="8">
+           <ion-input 
+           formControlName="phoneCode" 
+           [(ngModel)]="phone" 
+           name="phone" 
+           placeholder="Numéro de téléphone" 
+           required></ion-input>
+         </ion-col>
+       </ion-row>
+     </ion-grid>
+   </ion-item>
+   <ion-text 
+     class="ion-text-left"
+     color="danger"
+     *ngIf="!inscForm.get('phone')?.valid && inscForm.get('phone')?.touched">
+     <p class="error">*SVP entre votre phone </p>
+   </ion-text>
+
+
+   <!-- modal -->
+   <ion-modal #elmodal class="modall1" trigger="pays">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-searchbar placeholder="Search" (ionInput)="searchbarInput($event)"></ion-searchbar>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        
+        <ion-list>
+          <ion-item *ngFor="let item of pays">
+            <ion-avatar slot="start">
+              <ion-img [src]="item.flags.png"></ion-img>
+            </ion-avatar>
+            <ion-checkbox slot="end" (click)="checkboxChange(item.name.common)"
+          ></ion-checkbox>
+            <ion-label>
+              <h2>{{item.name.common}}</h2>
+              <p>{{item.name.official}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+
+    <ion-button *ngIf="partie1" class="connection" shape="round" (click)="changeParti1()">suivant</ion-button>
+    </div>
+    <!-- Partie2 -->
+    <div *ngIf="partie2">
+      <ion-button style="--background: #F6BA4B; width:60px;--box-shadow: none;" slot="start" class="bg-transparent w-8 h-8" (click)="partie2=false; partie1=true">
+        <ion-icon name="arrow-back-outline" class="text-white" style="color: #fff;" ></ion-icon>
+    </ion-button>
+
+    <ion-item class="elmIteme ion-margin-vertical">
+      <ion-icon 
+        name="pin-outline" slot="end" color="medium">
+      </ion-icon>
+      <ion-input 
+        type="text"
+        formControlName="city" 
+        [(ngModel)]="city"
+        placeholder="Entrer votre Ville">
+      </ion-input>
+    </ion-item>
+    <ion-text 
+      class="ion-text-left"
+      color="danger"
+      *ngIf="!inscForm.get('city')?.valid && inscForm.get('city')?.touched">
+      <p class="error">*SVP entrer votre Ville </p>
+    </ion-text>
+
+    <ion-item class="elmIteme ion-margin-vertical">
+      <ion-icon 
+        name="school-outline" slot="end" color="medium">
+      </ion-icon>
+      <ion-select 
+      formControlName="class_"
+      [(ngModel)]="class_" 
+      name="class_" 
+      placeholder="votre classe"
+      required 
+      interface="popover">
+        <ion-select-option value="Sixième">Sixième</ion-select-option>
+        <ion-select-option value="Cinquième">Cinquième</ion-select-option>
+        <ion-select-option value="Quatrième">Quatrième</ion-select-option>
+        <ion-select-option value="Troisième">Troisième</ion-select-option>
+        <ion-select-option value="Seconde">Seconde</ion-select-option>
+        <ion-select-option value="Première">Première</ion-select-option>
+        <ion-select-option value="Terminale">Terminale</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-text 
+      class="ion-text-left"
+      color="danger"
+      *ngIf="!inscForm.get('class_')?.valid && inscForm.get('class_')?.touched">
+      <p class="error">*SVP entrer votre classe </p>
+    </ion-text>
+
+
+    <ion-item class="elmIteme ion-margin-vertical">
+      <ion-icon
+        (click)="onChange()"
+        [name]="isTypePassword ? 'lock-closed-outline' : 'lock-open-outline'"
+        slot="end"
+        [color]="isTypePassword ? 'medium' : 'primary'"
+      >
+      </ion-icon>
+      <ion-input
+        formControlName="password"
+        [(ngModel)]="password"
+        name="password"
+        [type]="isTypePassword ? 'password' : 'text'"
+        placeholder="Entrer votre mot de passe"
+        required="true"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-text
+      class="ion-text-left"
+      color="danger"
+      *ngIf="!inscForm.get('password')?.valid && inscForm.get('password')?.touched"
+    >
+      <p
+        class="error"
+        *ngIf="inscForm.get('password')?.invalid && inscForm.get('password')?.errors"
+      >
+        *SVP entrer votre mot de passe
+      </p>
+    </ion-text>
+
+    <ion-row class="ion-margin-vertical">
+      <ion-col size="12">
+        <div class="flex justify-center">
+          <ion-checkbox 
+            formControlName="termsAccepted" 
+            [(ngModel)]="termsAccepted"
+            placeholder="Accepter les conditions">
+          </ion-checkbox>
+          <ion-note class="ps-2" id="openmodal" expand="block">Accepter les conditions</ion-note>
+          <app-confi />
+        </div>
+        <ion-text 
+          class="ion-text-left"
+          color="danger"
+          *ngIf="!inscForm.get('termsAccepted')?.valid && inscForm.get('termsAccepted')?.touched">
+          <p class="error" >*SVP Accepter les conditions </p>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </div>
+
+    <ion-button *ngIf="partie2" class="connection" shape="round" (click)="onSubmit()">valider</ion-button>
+
+    <p class="signup">
+      <ion-note>
+        Vous vouliez vous
+        <ion-text class="ins" routerLink="/"
+          >connecter ?</ion-text
+        >
+      </ion-note>
+    </p>
+  </ion-list>
+</form>
+
+
+
+
+</ion-content>

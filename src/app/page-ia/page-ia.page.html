@@ -1,0 +1,223 @@
+<ion-header>
+  <ion-toolbar
+    style="--background: #f6ba4b; padding-top: 10px; padding-bottom: 10px"
+  >
+    <ion-buttons slot="end">
+      <ion-menu-button style="--color: #fff"></ion-menu-button>
+    </ion-buttons>
+    <ion-avatar slot="start">
+      <img
+        class="h-10 w-10 mt-3 ms-2"
+        src="assets/images/logojpeg.jpeg"
+        alt="User Avatar"
+      />
+    </ion-avatar>
+    <ion-label>
+      <ion-title style="--color: #fff">Moussé Jangalma</ion-title>
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="flex items-center justify-center h-full">
+  
+  <div 
+  *ngIf="showAbone"
+  id="myModal3"
+  class="relative z-10"
+  aria-labelledby="modal-title"
+  role="dialog"
+  aria-modal="true"
+>
+  <div
+    class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity"
+    aria-hidden="true"
+  ></div>
+
+  <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+    <div
+      class="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0"
+    >
+      <div
+        class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+      >
+        <div class="bg-white px-4 pb-4 sm:p-6 sm:pb-4">
+          <div class="sm:flex sm:items-start">
+            <div
+              class="mx-auto mt-2 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"
+            >
+              <svg
+                class="h-6 w-6 text-red-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                />
+              </svg>
+            </div>
+            <div class="mt-3 text-center sm:ml-4 sm:mt-0 md:text-center">
+              <h3
+                class="text-base font-semibold leading-6 text-gray-900"
+                id="modal-title"
+              >
+               Alert Abonnement
+              </h3>
+              <div class="mt-2">
+                <p class="text-sm text-gray-500">
+                  Désolé, votre période d'essai de 7 jours est terminée. 
+                  Veuillez vous abonner pour profiter de cette fonctionnalité.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-50 px-4 py-1 sm:flex sm:flex-row-reverse sm:px-6">
+          <button
+            routerLink="/abonnement"
+            type="button"
+            id="fina"
+            class="mt-3 inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 sm:mt-0 sm:w-auto"
+          >
+            Faire un abonnement
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="elm h-full p-3 md:w-5/5 lg:w-5/5 max-h-[90vh] overflow-auto">
+    <ion-text class="text-center pt-4 text-lg text-black dark:text-white">
+      <em>Y a-t-il une question que vous aimeriez me poser?</em>
+    </ion-text>
+    <deep-chat
+      #chat
+      class="w-full h-full"
+      style="
+        background-color: transparent;
+        border: none;
+        margin: auto;
+        display: block;
+        width: 100%;
+        height: 100%;
+      "
+      messageStyles='{
+    "default": {
+      "shared": {"bubble": {"maxWidth": "100%", "backgroundColor": "unset", "marginTop": "10px", "marginBottom": "10px"}},
+      "user": {"bubble": {"marginLeft": "0px", "color": "#F6BA4B"}},
+      "ai": {"innerContainer": {"borderRadius": "15px", "backgroundColor": "#b0deff4f"}}
+    }
+  }'
+      avatars='{
+    "default": {
+      "styles": {"position": "left", "container": {"marginLeft": "12px", "marginRight": "5px"}}
+    },
+    "ai": {"src": "assets/images/chatboot.png", "styles": {"position": "left", "avatar": {"paddingTop": "6px"}}}
+  }'
+      submitButtonStyles='{
+    "position": "outside-right",
+    "submit": {
+      "container": {
+        "default": {"bottom": "0.9em", "padding": "6px 5px 4px"},
+        "hover": {"backgroundColor": "#b0deff4f"},
+        "click": {"backgroundColor": "#b0deffb5"}
+      },
+      "svg": {
+        "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?> <svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m21.426 11.095-17-8A.999.999 0 0 0 3.03 4.242L4.969 12 3.03 19.758a.998.998 0 0 0 1.396 1.147l17-8a1 1 0 0 0 0-1.81zM5.481 18.197l.839-3.357L12 12 6.32 9.16l-.839-3.357L18.651 12l-13.17 6.197z\"/></svg>",
+        "styles": {
+          "default": {
+            "width": "1.5em",
+            "filter": "brightness(0) saturate(100%) invert(10%) sepia(86%) saturate(6044%) hue-rotate(205deg) brightness(100%) contrast(100%)"
+          }
+        }
+      }
+    },
+    "loading": {
+      "svg": {
+        "styles": {
+          "default": {
+            "filter": "brightness(0) saturate(100%) invert(72%) sepia(0%) saturate(3044%) hue-rotate(322deg) brightness(100%) contrast(96%)"
+          }
+        }
+      }
+    },
+    "stop": {
+      "container": {"hover": {"backgroundColor": "#ededed"}},
+      "svg": {
+        "styles": {
+          "default": {
+            "filter": "brightness(0) saturate(100%) invert(59%) sepia(0%) saturate(0%) hue-rotate(348deg) brightness(96%) contrast(93%)"
+          }
+        }
+      }
+    }
+  }'
+      textInput='{
+    "styles": {
+      "text": {"color": "black"},
+      "container": {
+        "borderRadius": "20px",
+        "border": "unset",
+        "width": "78%",
+        "marginLeft": "-15px",
+        "boxShadow": "0px 0.3px 0.9px rgba(0, 0, 0, 0.12), 0px 1.6px 3.6px rgba(0, 0, 0, 0.16)"
+      },
+      "focus": {"border": "2px solid #111A3A"}
+    },
+    "placeholder": {"text": "Message Jangalma...", "style": {"color": "#111A3A"}},
+    "characterLimit": 1000
+  }'
+      textInput='{
+    "styles": {
+      "container": {"borderRadius": "20px", "border": "1px solid #969696", "boxShadow": "unset", "width": "78%", "marginLeft": "-15px"},
+      "text": {"padding": "10px", "paddingLeft": "15px", "paddingRight": "34px", "color": "black"}
+    },
+    "placeholder": {"text": "poser une question...", "style": {"color": "#111A3A"}},
+    "characterLimit": 1000
+    }'
+      auxiliaryStyle="
+  ::-webkit-scrollbar {
+    background-color: #F6BA4B;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #F6BA4B;
+    border-radius: 5px;
+  }"
+      demo="true"
+      [directConnection]="{
+    cohere: {
+      key: keys,
+      parameters: { temperature: 1 }
+    }
+  }"
+    >
+      <div>
+        <div class="custom-button-container" *ngFor="let button of buttons">
+          <div
+            class="custom-button"
+            style="
+              margin-bottom: 15px;
+              background: #f3f3f3;
+              border-radius: 8px;
+              box-shadow: inset;
+              color: black;
+              padding: 8px;
+              text-align: center;
+              cursor: pointer;
+            "
+            (click)="handleButtonClick(button)"
+          >
+            <div class="custom-button-text">{{ button.text }}</div>
+          </div>
+        </div>
+      </div>
+    </deep-chat>
+  </div>
+  <!-- </ion-card-content>
+</ion-card> -->
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar style="--background: #1a717d; color: #ffffff;">
+    <ion-title>Profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-container">
+    <img src="assets/images/logo.png" alt="Avatar" class="avatar">
+    <h2>{{ user?.displayName }}</h2>
+    <p>Email: {{ user?.email }}</p>
+    <p>Ville: {{ city }}</p> <!-- Les informations de ville, téléphone et classe doivent être récupérées séparément -->
+    <p>Téléphone: {{ phone }}</p>
+    <p>Classe: {{ class_ }}</p>
+    <ion-button (click)="editProfile()" expand="block" color="primary">Modifier le profil</ion-button>
+    <ion-button (click)="changePassword()" expand="block" color="secondary">Changer le mot de passe</ion-button>
+    <ion-button (click)="logout()" expand="block" color="danger">Se déconnecter</ion-button>
+  </div>
+</ion-content>

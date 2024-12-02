@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar style="--background: #F6BA4B; padding-top: 10px; padding-bottom: 10px;">
+    <ion-buttons slot="end">
+      <ion-menu-button style="--color: #fff;"></ion-menu-button>
+    </ion-buttons>
+    <ion-avatar slot="start">
+      <img class="h-10 w-10 mt-3 ms-2" src="assets/images/logojpeg.jpeg" alt="User Avatar">
+    </ion-avatar>
+    <ion-label>
+      <ion-title style="--color: #fff;">calculatrice</ion-title>
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-top">
+  <div class="container p-4">
+    <div class="display">
+      <div class="display-expression text-black dark:text-white">{{ displayNumber }}</div>
+      <div class="display-result text-black dark:text-white">{{ currentNumber }}</div>
+    </div>
+    <div class="buttons">
+      <ion-button class="gray-btn" (click)="reset()">AC</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('!')">!</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('%')">%</ion-button>
+      <ion-button class="orange-btn" (click)="onButtonPress('/')">/</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('1')">1</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('2')">2</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('3')">3</ion-button>
+      <ion-button class="orange-btn" (click)="onButtonPress('*')">*</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('4')">4</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('5')">5</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('6')">6</ion-button>
+      <ion-button class="orange-btn" (click)="onButtonPress('-')">-</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('7')">7</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('8')">8</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('9')">9</ion-button>
+      <ion-button class="orange-btn" (click)="onButtonPress('+')">+</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('(')">(</ion-button>
+      <ion-button class="double-height" (click)="onButtonPress('0')">0</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress(')')">)</ion-button>
+      <ion-button class="orange-btn" (click)="onButtonPress('=')">=</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('sqrt')">√</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('sin')">sin</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('cos')">cos</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('tan')">tan</ion-button>
+      <ion-button class="gray-btn" (click)="onButtonPress('.')">.</ion-button>
+    </div>
+  </div>
+</ion-content>
+

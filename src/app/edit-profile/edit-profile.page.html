@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+        <ion-title>Modifier le profil</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content>
+      <form (ngSubmit)="onEditProfile()" #editProfileForm="ngForm">
+        <ion-item>
+          <ion-label>Prénom :</ion-label>
+          <ion-input [(ngModel)]="name" name="name" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Nom :</ion-label>
+          <ion-input [(ngModel)]="surname" name="surname" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Email :</ion-label>
+          <ion-input [(ngModel)]="email" name="email" type="email" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Téléphone :</ion-label>
+          <ion-input [(ngModel)]="phone" name="phone" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Classe :</ion-label>
+          <ion-select [(ngModel)]="class_" name="class_" required>
+            <ion-select-option value="seconde">6eme</ion-select-option>
+            <ion-select-option value="premiere">5eme</ion-select-option>
+            <ion-select-option value="terminale">4eme</ion-select-option>
+            <ion-select-option value="seconde">3eme</ion-select-option>
+            <ion-select-option value="premiere">2nd</ion-select-option>
+            <ion-select-option value="terminale">1er</ion-select-option>
+            <ion-select-option value="terminale">Tle</ion-select-option>
+          </ion-select>
+        </ion-item>
+        
+        <ion-button type="submit" expand="block">Mettre à jour le profil</ion-button>
+      </form>
+    </ion-content>
+    

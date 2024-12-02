@@ -1,0 +1,118 @@
+ <ion-content>
+  <div class="circleBase type2 circle1"></div>
+  <div class="circleBase type1"></div>
+  <div class="circleBase type2 circle2"></div>
+
+  <ion-label class="welcomeMessage">
+      <img loading='lazy'
+            alt="Silhouette of mountains"
+            src="assets/images/logo2.png"
+            className="logoImg h-8 w-8 object-cover"
+          />
+  </ion-label>
+
+    <form [formGroup]="form" class="">
+      <ion-list lines="none" class="ion-margin-horizontal ion-padding-horizontal ion-text-center">
+        <ion-list-header>
+          <!-- <p *ngIf="loginSuccess" class="text-green-500 w-60">
+            <em> Connexion réussie. Redirection en cours...</em>
+          </p>
+          <p *ngIf="loginFailed" class="text-red-500 w-60">
+            <em>Erreur lors de la connexion. Veuillez réessayer.</em>
+          </p> -->
+          <p [class]="loginSuccess?'elmp text-green-500':'elmp text-red-500'"><em>{{message}}</em></p>
+          </ion-list-header>
+          <ion-item class="ion-margin-vertical">
+          <ion-icon name="mail-outline" slot="end" color="medium"> </ion-icon>
+          <ion-input
+            formControlName="email"
+            type="email"
+            [(ngModel)]="email"
+            name="password"
+            placeholder="Entrer votre Email"
+          >
+          </ion-input>
+        </ion-item>
+        <ion-text
+          class="ion-text-left"
+          color="danger"
+          *ngIf="!form.get('email')?.valid && form.get('email')?.touched"
+        >
+          <p class="error">*SVP entrer votre Email</p>
+        </ion-text>
+  
+        <ion-item class="ion-margin-vertical">
+          <ion-icon
+            (click)="onChange()"
+            [name]="isTypePassword ? 'lock-closed-outline' : 'lock-open-outline'"
+            slot="end"
+            [color]="isTypePassword ? 'medium' : 'primary'"
+          >
+          </ion-icon>
+          <ion-input
+            formControlName="password"
+            [(ngModel)]="password"
+            name="password"
+            [type]="isTypePassword ? 'password' : 'text'"
+            placeholder="Entrer votre mot de passe"
+            required="true"
+          >
+          </ion-input>
+        </ion-item>
+        <ion-text
+          class="ion-text-left"
+          color="danger"
+          *ngIf="!form.get('password')?.valid && form.get('password')?.touched"
+        >
+          <p
+            class="error"
+            *ngIf="form.get('password')?.invalid && form.get('password')?.errors"
+          >
+            *SVP entrer votre mot de passe
+          </p>
+        </ion-text>
+  
+        <ion-row class="ion-margin-vertical">
+          <ion-col size="12">
+            <div align="center" (click)="toggleResetPassword()" id="open-modal" expand="block">
+              <ion-note>Mot de passe oublié?</ion-note>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-button class="connection" shape="round" (click)="onSubmit()">
+          connection
+        </ion-button>
+        <p class="signup">
+          <ion-note>
+            Vous n'êtes pas encore
+            <ion-text class="ins" (click)="goToSignup()"
+              >Inscris ?</ion-text>
+          </ion-note>
+        </p>
+      </ion-list>
+    </form>
+    
+
+<ion-modal #modal trigger="open-modal" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+  <ng-template>
+    <ion-content class="ion-padding ion-text-center">
+      <ion-item class="ion-margin-vertical">
+        <ion-icon name="mail-outline" slot="end" color="medium"> </ion-icon>
+        <ion-input
+          type="email"
+          [(ngModel)]="resetEmail"
+          placeholder="Entrer votre Email"
+          required
+        >
+        </ion-input>
+      </ion-item>
+      <ion-button
+      class="connection" shape="round"
+        style="--background: #F6BA4B; color: #ffffff"
+        (click)="resetPassword(resetEmail)"
+        >Réinitialiser le mot de passe</ion-button
+      >
+    </ion-content>
+  </ng-template>
+</ion-modal>
+</ion-content>

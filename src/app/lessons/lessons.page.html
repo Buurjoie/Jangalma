@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar style="--background: #F6BA4B;">
+    <ion-buttons slot="end">
+      <ion-menu-button style="--color: #fff;"></ion-menu-button>
+    </ion-buttons>
+    <ion-button style="--background: transparent; --box-shadow: none; --background-activated: transparent" slot="start" class="bg-transparent" (click)="goBack()">
+      <ion-icon name="chevron-back" class="text-white"></ion-icon>
+  </ion-button>
+    <ion-label>
+      <ion-title style="--color: #fff;">Leçons</ion-title>
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let lesson of lessons">
+        <ion-card (click)="openLessonDetails(lesson); adService.handleClick()">
+          <ion-card-header>
+              <ion-card-title style="--color: #fff;">{{lesson.title.rendered}}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list *ngIf="!lessons.length" lines="none" class="bg-transparent">
+    <ion-item class="bg-transparent" *ngFor="let elm of loadingTab">
+      <ion-label [id]="elm">
+        <h3>
+          <ion-skeleton-text [animated]="true" style="width: 100%; height: 100px;"></ion-skeleton-text>
+        </h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+

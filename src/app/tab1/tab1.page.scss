@@ -1,0 +1,38 @@
+ion-card {
+  --background: #1a717d;
+  --border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 16px;
+}
+
+.course-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+ion-card-title {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+ion-card-content {
+  color: #ffffff;
+}
+
+.load-more-button {
+  --background: #1a717d;
+  --color: #ffffff;
+  font-weight: bold;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.no-underline {
+  text-decoration: none;
+}

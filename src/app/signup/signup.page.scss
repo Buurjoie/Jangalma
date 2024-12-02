@@ -1,0 +1,130 @@
+/* elm nice nice */
+
+.circleBase {
+  border-radius: 50%;
+}
+
+.type1 {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(90deg, #F6BA4B 0%, #F6BA4B 100%);
+  box-shadow: 0px 1px 10px #F6BA4B;
+  top: -50px;
+  left: -50px;
+}
+
+.type2 {
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  box-shadow: 0px 1px 10px #00000068;
+}
+
+.circle1 {
+  margin-left: 180px;
+  margin-top: 50px;
+}
+
+.circle2 {
+  position: absolute;
+  top: 150px;
+  left: -20px;
+}
+
+.welcomeMessage {
+  position: absolute;
+  top: 70px;
+  left: 50px;
+
+  img{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    top:-90px;
+    left:-50px;
+  }
+}
+
+.error {
+  font-size: 0.75rem;
+}
+
+
+// ::-webkit-scrollbar, *::-webkit-scrollbar {
+//   display: none;
+//   overflow: hidden;
+// }
+
+// ion-content {
+//   overflow: hidden;
+//   --overflow: hidden;
+// }
+
+.scroll-content {
+  overflow: hidden;
+}
+
+ion-list.elmListe {
+  background: transparent;
+  transform: translateY(20vh);
+  ion-item.elmIteme {
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 10px;
+  }
+  ion-button {
+    width: 30vh;
+    margin: auto;
+  }
+  .alignItems {
+    ion-checkbox, ion-note {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    ion-checkbox {
+      margin-right: 1vw;
+      --size: 1.1rem;
+    }
+  }
+  .signup {
+    margin-top: 5vh;
+    font-size: 0.8rem;
+    
+    ion-text.ins{
+      color: #F6BA4B;
+      cursor: pointer;
+    }     
+  }
+  
+  ion-col {
+    ion-note {
+      font-size: 0.85rem;
+    }
+  }
+  ion-button.connection{
+    --background: #F6BA4B;
+    --background-activated: transparent;
+  }
+}
+.elmBTN{
+  --background: transparent; 
+  --box-shadow: none; 
+  width: 60px;
+}
+
+
+
+ion-modal.modall1 {
+  --height: 50%;
+  --border-radius: 16px;
+}
+
+// ion-modal::part(backdrop) {
+//   background: rgba(209, 213, 219);
+//   opacity: 1;
+// }
+
+// ion-modal ion-toolbar {
+//   --background: rgb(14 116 144);
+//   --color: white;
+// }

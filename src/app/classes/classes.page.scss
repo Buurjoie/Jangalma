@@ -1,0 +1,37 @@
+
+
+  .classes-list {
+    padding: 10px;
+  }
+  
+  .classes-list ion-item {
+    --background: #F6BA4B;
+    --padding-start: 0;
+    --padding-end: 0;
+    --border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+  
+  .classes-list ion-item:hover {
+    --background:  #F6BA4B ;
+  }
+  .classe-title {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+  }
+  
+  .imsg{
+   height: 166px;
+  }
+  
+
+  
+  
+  
+  

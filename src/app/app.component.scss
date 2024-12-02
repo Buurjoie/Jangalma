@@ -1,0 +1,123 @@
+/* Style du menu latéral */
+body{
+    background-color: #fff;
+}
+ion-menu {
+    --background: #f5f5f5;
+  }
+  
+  /* Style de l'en-tête du menu */
+  ion-header {
+    background-color: #fff;
+    padding: 16px;
+  }
+  
+  ion-toolbar {
+    --background: #fff;
+    --color: #333;
+  }
+  
+  ion-avatar img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  ion-title {
+    margin-left: 16px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Style du contenu du menu */
+  ion-content {
+    padding: 16px;
+  }
+  
+  ion-list {
+    margin: 0;
+    padding: 10px;
+  }
+  
+  ion-item {
+    margin-bottom: 16px;
+  }
+  
+  ion-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+  }
+  
+  .avatar {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 16px;
+  }
+  
+  .profile-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .user-info ion-icon {
+    margin-right: 5px;
+  }
+
+
+
+
+  ion-tabs{
+    padding: 0px 0px 20px 0px;
+      ion-tab-bar{
+        width: 90%;
+        border:none;
+        margin: auto;
+        border-radius: 20px;
+        padding: 0;
+        position: relative;
+        box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.04), 0px 1px 3px 0px rgba(0,0,0,0.02);
+         --background: #F6BA4B;
+         ion-tab-button.elm{
+          --color-selected:#111A3A;
+          --color: #ffff;
+          width: 50px;
+         }
+
+         ion-tab-button.elmIA{
+          --color-selected:#111A3A;
+           border-radius: 100%;
+           box-shadow: 0px 3px 6px 0px;
+           width: 80px;
+           height: 60px;
+           position: absolute;
+         }
+
+        
+        .elmR{
+          margin-left: 80px;
+        }
+        ion-label{
+          color: #F6BA4B;
+          font-family: 'Inria Serif';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 10px;
+        }
+      }
+  }
+

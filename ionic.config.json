@@ -1,0 +1,7 @@
+{
+  "name": "myPdfApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

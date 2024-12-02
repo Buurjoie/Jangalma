@@ -1,0 +1,100 @@
+<ion-content class="ion-padding-top">
+  <div class="flex flex-col space-y-4 overflow-auto max-w-lg mx-auto mb-4 font-montserrat">
+    <div class="max-w-lg mx-auto">
+        <img class="w-23 h-20 rounded-full" src="assets/images/logojpeg.png" alt="">
+    </div>
+    <div class="text-foreground p-6 max-w-xl mx-auto">
+        <form class="space-y-4" [formGroup]="form">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="mb-3">
+                    <label for="your-name" class="block text-jagalma-orange font-montserrat mb-2">Votre
+                        Nom</label>
+                    <ion-input
+                    formControlName="nom"
+                    [(ngModel)]="nom"
+                    name="nom"
+                    type="text"
+                    class="w-full p-2 border border-border rounded" />
+                    <ion-text
+                      class="ion-text-left mt-3"
+                      color="danger"
+                      *ngIf="!form.get('nom')?.valid && form.get('nom')?.touched"
+                    >
+                      <p class="error">*SVP entrer votre nom</p>
+                    </ion-text>
+                </div>
+                <div class="mb-3">
+                    <label for="phone"
+                        class="block text-jagalma-orange font-montserrat mb-2">Téléphone</label>
+                    <div class="flex items-center space-x-2">
+                        <span
+                            class="p-2 bg-muted text-muted-foreground bg-orange-100 text-orange-800 rounded">+221</span>
+                        <ion-input 
+                        formControlName="phone"
+                        [(ngModel)]="phone"
+                        name="phone"
+                        type="number" id="phone" name="phone"
+                        class="w-full p-2 border border-border rounded" />
+                      </div>
+                        <ion-text
+                        class="ion-text-left mt-3"
+                        color="danger"
+                        *ngIf="!form.get('phone')?.valid && form.get('phone')?.touched"
+                        >
+                       <p class="error">*SVP entrer votre Numéro de téléphone</p>
+                    </ion-text>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="mb-3">
+                    <label for="montant_reçu"
+                        class="block text-jagalma-orange font-montserrat mb-2">Montant reçu</label>
+                    <div class="flex items-center space-x-2">
+                        <ion-input 
+                        name="accont"
+                        type="number" 
+                        class="w-full p-2 border accountSend  border-border rounded" 
+                        readonly
+                        [value]="prix"
+                        />
+                        <span
+                            class="p-2 bg-muted text-muted-foreground bg-orange-100 text-orange-800 rounded">FCFA</span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="montant_envoyé"
+                        class="block text-jagalma-orange font-montserrat mb-2">Montant envoyé</label>
+                    <div class="flex items-center space-x-2">
+                        <input
+                        formControlName="montant"
+                        [(ngModel)]="montant"
+                        name="montant"
+                        type="number"
+                        class="w-full p-2 border border-border account rounded"
+                        readonly
+                        [value]="montant"
+                         />
+                        <span
+                            class="p-2 bg-muted text-muted-foreground bg-orange-100 text-orange-800 rounded">FCFA</span>
+                    </div>
+                </div>
+            </div>
+            <p class="text-destructive text-danger text-sm">Montant + Frais d'envoi: 1%</p>
+            <div class="flex justify-center space-x-4">
+                <!-- <button (click)="choixPaiement('om')"
+                  type="button" id="om"><img src="assets/images/maxit.png"
+                        alt="Logo 1" class="w-20 h-20 rounded-full" /></button> -->
+                <button (click)="choixPaiement('wave')"
+                type="button" id="wave"><img src="assets/images/wave.png"
+                        alt="Logo 2" class="w-20 h-20 rounded-full" /></button>
+            </div>
+            <div class="displayMoney">
+              <p [class]="modepaie==='om'? 'orange': 'skyblue'" >{{choixpaie}}</p></div>
+            <div class="flex justify-center mt-3">
+                <ion-button (click)="onSubmit()" class="connection px-5" shape="round" size="default">Payer</ion-button>
+            </div>
+    
+        </form>
+    </div>
+</div>
+</ion-content>

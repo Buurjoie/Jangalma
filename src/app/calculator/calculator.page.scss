@@ -1,0 +1,77 @@
+.custom-back-button {
+    --background: #111A3A; // Changer la couleur et l'opacité selon vos préférences
+    border-radius: 50%; // Pour un bouton de retour rond
+    padding: 4px; // Pour ajuster la taille du fond
+    color: #ffffff;
+  }
+  // :host {
+  //   ion-content {
+  //     // --ion-background-color: #c3dadd;
+  //   }
+  // }
+  
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .display {
+    padding: 0 10px;
+    min-height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: linear-gradient(180deg, #111A3A 0%, #2F48A0 100%);
+  
+    .display-expression {
+      text-align: right;
+      font-size: 30px;
+      font-weight: 700;
+    }
+  
+    .display-result {
+      font-size: 30px;
+      text-align: right;
+      font-weight: 700;
+    }
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 2px;
+  }
+  
+  ion-button {
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    --background: transparent;
+    --border-radius: 50px;
+    --box-shadow: none;
+    --ripple-color: #111A3A;
+    --color: #ffffff;
+    --height: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    --width: 100%;
+  }
+  
+  .gray-btn {
+    --background: #111A3A;
+  }
+  
+  .orange-btn {
+    --color: #111A3A;
+    --background: #F6BA4B;
+  }
+  
+  .double-height {
+    grid-row: span 2;
+    color: black;
+    --background: #F6BA4B;
+  }

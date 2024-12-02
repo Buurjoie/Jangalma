@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "572906823480",
+    "firebase_url": "https://senrevision-2c798-default-rtdb.firebaseio.com",
+    "project_id": "senrevision-2c798",
+    "storage_bucket": "senrevision-2c798.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572906823480:android:935e0560b45274ace2ebcd",
+        "android_client_info": {
+          "package_name": "com.senrevision.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572906823480-smtonl9jnk8l5jff581cfd6r8mrkr26n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.senrevision.app",
+            "certificate_hash": "8afb0ca018d8c8c15196cb380f48c6aa755aff13"
+          }
+        },
+        {
+          "client_id": "572906823480-sbtcg9r2hp4als4vra4sab9fl49labhq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBQDTWSkjdID4OgBGTEQqc79qorhxK_qM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572906823480-93faemreo3bmjh8jab4co1mcv51dafac.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "572906823480-aee4ckac0ht6etfbj0cvrer0tve142bh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "senrevision"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

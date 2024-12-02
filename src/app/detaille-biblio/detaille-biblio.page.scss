@@ -1,0 +1,13 @@
+.custom-back-button {
+    --background: rgba(14, 112, 100, 0.861); // Changer la couleur et l'opacité selon vos préférences
+    border-radius: 50%; // Pour un bouton de retour rond
+    padding: 4px; // Pour ajuster la taille du fond
+    color: #ffffff;
+  }
+
+  ion-skeleton-text.elmLodin{
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    margin:auto;
+  }

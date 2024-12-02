@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Jangalma</string>
+    <string name="title_activity_main">Jangalma</string>
+    <string name="package_name">com.senrevision.app</string>
+    <string name="custom_url_scheme">com.senrevision.app</string>
+    <string name="admob_app_id">ca-app-pub-8580211937730370~5071758690</string>
+</resources>

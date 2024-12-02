@@ -1,0 +1,170 @@
+<ion-header>
+  <ion-toolbar style="--background: #F6BA4B; padding-top: 10px; padding-bottom: 10px;">
+    <ion-buttons slot="end">
+      <ion-menu-button style="--color: #fff;"></ion-menu-button>
+    </ion-buttons>
+    <ion-avatar slot="start">
+      <img class="h-10 w-10 mt-3 ms-2" src="assets/images/logojpeg.jpeg" alt="User Avatar">
+    </ion-avatar>
+    <ion-label>
+      <ion-title style="--color: #fff;">Abonnement</ion-title>
+    </ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        size="12"
+        size-md="6"
+        size-lg="4"
+        *ngFor="let abonnement of abonnements"
+      >
+        <div
+          class="w-full carde max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 mb-3"
+        >
+          <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
+            {{abonnement.nom}}
+          </h5>
+          <div class="flex items-baseline text-gray-900 dark:text-white">
+            <span class="text-4xl font-extrabold tracking-tight">{{abonnement.prix}}</span>
+            <span class="text-2xl font-semibold ms-2">FCFA</span>
+            <span
+              class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400"
+              >/{{abonnement.descriptif}}</span
+            >
+          </div>
+          <ul role="list" class="space-y-5 my-7">
+            <li class="flex items-center">
+              <svg
+                class="flex-shrink-0 w-4 h-4 text-jagalma-orange dark:text-jagalma-orange"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+                />
+              </svg>
+              <span
+                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
+                >Chat IA avec Moussé Jangalma</span
+              >
+            </li>
+            <li class="flex">
+              <svg
+                class="flex-shrink-0 w-4 h-4 text-jagalma-orange dark:text-jagalma-orange"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+                />
+              </svg>
+              <span
+                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
+                >+100 Livres</span
+              >
+            </li>
+            <li class="flex">
+              <svg
+                class="flex-shrink-0 w-4 h-4 text-jagalma-orange dark:text-jagalma-orange"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+                />
+              </svg>
+              <span
+                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3"
+                >Lecture vocal des cours</span
+              >
+            </li>
+            <!-- <li class="flex line-through decoration-gray-500">
+              <svg
+                class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+                />
+              </svg>
+              <span
+                class="text-base font-normal leading-tight text-gray-500 ms-3"
+                >Sketch Files</span
+              >
+            </li> -->
+            <!-- <li class="flex line-through decoration-gray-500">
+              <svg
+                class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+                />
+              </svg>
+              <span
+                class="text-base font-normal leading-tight text-gray-500 ms-3"
+                >API Access</span
+              >
+            </li> -->
+            <!-- <li class="flex line-through decoration-gray-500">
+              <svg
+                class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+                />
+              </svg>
+              <span
+                class="text-base font-normal leading-tight text-gray-500 ms-3"
+                >Complete documentation</span
+              >
+            </li> -->
+            <!-- <li class="flex line-through decoration-gray-500">
+              <svg
+                class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+                />
+              </svg>
+              <span
+                class="text-base font-normal leading-tight text-gray-500 ms-3"
+                >24×7 phone & email support</span
+              >
+            </li> -->
+          </ul>
+          <button
+            (click)="showSubjects(abonnement.prix)"
+            type="button"
+            class="text-white bg-jagalma-orange hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-200 dark:bg-jagalma-orange dark:hover:bg-orange-500 dark:focus:ring-orange-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center"
+          >
+          S'abonner
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

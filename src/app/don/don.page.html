@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Faire Un Don
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/classes">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <p>Cette plate-forme existe grâce à vos dons. Nous vous remercions d'avance pour votre contribution.</p>
+    <ion-item>
+      <ion-label position="floating">Montant du don (FCFA)</ion-label>
+      <ion-input [(ngModel)]="donationAmount" type="number" min="100" value="1000"></ion-input>
+    </ion-item>
+    <ion-button (click)="onPayButtonClick()" style="--background: #1a717d; color: #ffffff;">Faire un don avec PayTech</ion-button>
+  </div>
+</ion-content>

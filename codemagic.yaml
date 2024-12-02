@@ -4,6 +4,11 @@ workflows:
 
         name: Codemagic Sample Workflow
 
-        max_build_duration: 120
+        max_build_duration: 100
 
-        instance_type: mac_mini_m2
+        instance_type: mac_pro
+        environment:
+            xcode: lastest
+            node: lastest
+            npm: lastest
+            ionic: lastest
